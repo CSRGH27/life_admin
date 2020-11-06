@@ -11,7 +11,7 @@ return new class extends DefaultDeployer
             ->deployDir('/var/www/life_admin')
             ->repositoryUrl('git@github.com:CSRGH27/life_admin.git')
             ->repositoryBranch('develop')
-            ->sharedFilesAndDirs(['.env'])
+
             ->composerInstallFlags('--prefer-dist --no-interaction --no-dev')
             ->symfonyEnvironment('prod');
     }

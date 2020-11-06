@@ -11,7 +11,7 @@ return new class extends DefaultDeployer
             ->deployDir('/var/www/life_admin')
             ->repositoryUrl('git@github.com:CSRGH27/life_admin.git')
             ->repositoryBranch('develop')
-
+            ->sharedFilesAndDirs(['.env'])
             ->composerInstallFlags('--prefer-dist --no-interaction --no-dev')
             ->symfonyEnvironment('prod');
     }
@@ -21,6 +21,11 @@ return new class extends DefaultDeployer
     {
         // $this->runLocal('./vendor/bin/simple-phpunit');
     }
+    public function beforePreparing()
+    {
+        $this->runRemote('cp {{ deploy_dir }}/repo/.env {{ project_dir }}/.env');
+    }
+
 
     // run some local or remote commands after the deployment is finished
     public function beforeFinishingDeploy()

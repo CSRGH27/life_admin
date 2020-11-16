@@ -8,11 +8,10 @@ return new class extends DefaultDeployer
     {
         return $this->getConfigBuilder()
             ->server('debian@51.178.50.201')
-            ->deployDir('/var/www/life_admin')
-            ->repositoryUrl('git@github.com:CSRGH27/life_admin.git')
-            ->repositoryBranch('develop')
+            ->deployDir('/var/www/systemeX')
+            ->repositoryUrl('git@github.com:CSRGH27/systemeX.git')
             ->sharedFilesAndDirs(['.env'])
-            ->composerInstallFlags('--prefer-dist --no-interaction --no-dev')
+            ->repositoryBranch('develop')
             ->symfonyEnvironment('prod');
     }
 

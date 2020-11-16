@@ -1,13 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import TopBar from "./components/TopBar";
 import "./styles/app.css";
 
 const App = () => {
-  return (
-    <>
-      <h1>Bonjou fijefjeikfjeifjiejfejfejfk</h1>
-    </>
-  );
+  return <TopBar />;
 };
 
 const rootElement = document.querySelector("#app");

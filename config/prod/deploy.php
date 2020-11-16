@@ -22,14 +22,16 @@ return new class extends DefaultDeployer
     }
     public function beforePreparing()
     {
-        $this->runRemote('cp {{ deploy_dir }}/repo/.env {{ project_dir }}/.env');
+        //$this->runRemote('cp {{ deploy_dir }}/repo/.env {{ project_dir }}/.env');
     }
 
 
     // run some local or remote commands after the deployment is finished
     public function beforeFinishingDeploy()
     {
-        // $this->runRemote('{{ console_bin }} app:my-task-name');
+        $this->runRemote('cd {{ project_dir }}');
+        $this->runRemote('yarn install');
+        $this->runRemote('yarn build');
         // $this->runLocal('say "The deployment has finished."');
     }
 };

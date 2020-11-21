@@ -5,10 +5,11 @@ import { CSSTransition } from "react-transition-group";
 const Menu = () => {
   const [showMenu, setshowMenu] = useState(false);
 
-  const handleMenu = () => {
-    setshowMenu((showMenu) => !showMenu);
+  const handleMenu = (bool) => {
+    setshowMenu((showMenu) => bool);
+    console.log(showMenu);
   };
-  console.log(showMenu);
+
   return (
     <>
       <div className="big_ctn_menu">
@@ -20,10 +21,21 @@ const Menu = () => {
         </ul>
       </div>
 
-      <Button onClick={() => handleMenu()}>Test</Button>
-      <CSSTransition in={showMenu} timeout={300} classNames="alert">
+      {/* <Button
+        onMouseLeave={() => handleMenu(false)}
+        onMouseEnter={() => handleMenu(true)}
+      >
+        Test
+      </Button>
+      <CSSTransition
+        onMouseEnter={() => handleMenu(true)}
+        onMouseLeave={() => handleMenu(false)}
+        in={showMenu}
+        timeout={300}
+        classNames="alert"
+      >
         <div dismissible className="test"></div>
-      </CSSTransition>
+      </CSSTransition> */}
     </>
   );
 };

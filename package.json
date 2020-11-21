@@ -23,7 +23,12 @@
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
+    "dotenv": "^8.2.0",
+    "i": "^0.3.6",
     "react-router-dom": "^5.2.0",
+    "react-tiger-transition": "^4.1.2",
+    "react-toastify": "^6.1.0",
     "react-transition-group": "^4.4.1"
   }
 }

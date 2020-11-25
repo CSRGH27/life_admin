@@ -7,6 +7,7 @@ import Menu from "./components/Menu";
 import TopBar from "./components/TopBar";
 import HomePage from "./pages/Homepage";
 import Login from "./pages/Login";
+import LoginForm from "./pages/LoginForm";
 import Register from "./pages/Register";
 import RegisterForm from "./pages/RegisterForm";
 import "./styles/app.css";
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/register" component={Register}></Route>
         <Route path="/login" component={Login}></Route>
         <Route path="/registerform" component={RegisterForm}></Route>
+        <Route path="/loginform" component={LoginForm}></Route>
       </Switch>
       <ToastContainer position={toast.POSITION.TOP_LEFT} />
     </HashRouter>

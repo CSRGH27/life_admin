@@ -8,14 +8,16 @@ const Login = () => {
     <div className="bg_form_auth">
       <div className="modal_form_auth">
         <h3>Connectez vous a Systeme X</h3>
-        <Button
-          color="secondary"
-          className="btn_form"
-          startIcon={<MailOutline />}
-          variant="outlined"
-        >
-          Connexion avec un email
-        </Button>
+        <NavLink to="/loginform">
+          <Button
+            color="secondary"
+            className="btn_form"
+            startIcon={<MailOutline />}
+            variant="outlined"
+          >
+            Connexion avec un email
+          </Button>
+        </NavLink>
         <Button
           color="primary"
           className="btn_form"

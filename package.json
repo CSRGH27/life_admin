@@ -29,6 +29,8 @@
     "react-router-dom": "^5.2.0",
     "react-tiger-transition": "^4.1.2",
     "react-toastify": "^6.1.0",
-    "react-transition-group": "^4.4.1"
+    "react-transition-group": "^4.4.1",
+    "reshake": "^1.2.1",
+    "styled-components": "^5.2.1"
   }
 }

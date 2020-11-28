@@ -11,6 +11,7 @@ import LoginForm from "./pages/LoginForm";
 import Register from "./pages/Register";
 import RegisterForm from "./pages/RegisterForm";
 import "./styles/app.css";
+import $ from "jquery";
 const App = () => {
   return (
     <HashRouter>

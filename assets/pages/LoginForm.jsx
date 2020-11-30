@@ -5,8 +5,9 @@ import "csshake/dist/csshake.min.css";
 import { LOG_URL_API } from "../config";
 import $ from "jquery";
 import { toast } from "react-toastify";
+import AuthApi from "../services/AuthApi";
 
-const LoginForm = () => {
+const LoginForm = ({ history, onLogin }) => {
   const shakeError = () => {
     $(".modal_register_form").addClass("shake-horizontal shake-constant");
     setTimeout(() => {
@@ -19,23 +20,15 @@ const LoginForm = () => {
     password: "",
   });
 
-  console.log(LOG_URL_API);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await Axios.post(LOG_URL_API, credentials)
-        .then((response) => response.data.token)
-        .then((token) => {
-          window.localStorage.setItem("authToken", token);
-          window.localStorage.setItem("username", credentials.username);
-          let username = credentials.username;
-          axios.defaults.headers["Authorization"] = "Bearer " + token;
-          history.replace("/list");
-          toast.success(
-            "Bonjour " + username + " vous etes maintenant connecte ! 😎"
-          );
-        });
+      await AuthApi.authenticate(credentials);
+      history.replace("/home");
+      onLogin(true);
+      toast.success(
+        "Bonjour " + username + " vous etes maintenant connecte ! 😎"
+      );
     } catch (error) {
       if (error.response) {
         toast.error(
